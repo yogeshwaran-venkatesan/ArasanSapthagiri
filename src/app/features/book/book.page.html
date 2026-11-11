@@ -1,0 +1,142 @@
+<app-page-hero [image]="img.hero" [eyebrow]="'bookPage.eyebrow' | translate" [title]="'bookPage.title' | translate"
+               [lead]="'bookPage.lead' | translate" />
+
+<section class="py-14 sm:py-20">
+  <div class="container-x grid gap-10 lg:grid-cols-[1fr_22rem] lg:items-start">
+    @if (status() === 'idle') {
+      <form [formGroup]="form" (ngSubmit)="submit()" novalidate class="min-w-0 rounded-[2rem] bg-white p-5 shadow-soft sm:p-10">
+        <!-- Stay -->
+        <fieldset>
+          <legend class="font-display text-2xl font-semibold text-forest-900">{{ 'bookPage.stay' | translate }}</legend>
+          <div class="mt-6 grid gap-5 sm:grid-cols-2">
+            <div>
+              <label for="checkIn" class="field-label">{{ 'booking.checkIn' | translate }}</label>
+              <input id="checkIn" type="date" class="field" formControlName="checkIn" [min]="today"
+                     [attr.aria-invalid]="invalid('checkIn') || (stayInvalid() && form.hasError('checkInPast'))" aria-describedby="stay-error" />
+            </div>
+            <div>
+              <label for="checkOut" class="field-label">
+                {{ 'booking.checkOut' | translate }}
+                @if (nights()) { <span class="font-normal text-muted">· {{ 'booking.nights' | translate: { count: nights() } }}</span> }
+              </label>
+              <input id="checkOut" type="date" class="field" formControlName="checkOut" [min]="minCheckOut()"
+                     [attr.aria-invalid]="invalid('checkOut') || (stayInvalid() && form.hasError('checkOutBeforeCheckIn'))" aria-describedby="stay-error" />
+            </div>
+          </div>
+          <p id="stay-error" class="field-error" aria-live="polite">
+            @if (invalid('checkIn') || invalid('checkOut')) { {{ 'form.errors.dates' | translate }} }
+            @else if (stayInvalid() && form.hasError('checkInPast')) { {{ 'form.errors.checkInPast' | translate }} }
+            @else if (stayInvalid() && form.hasError('checkOutBeforeCheckIn')) { {{ 'form.errors.checkOutBeforeCheckIn' | translate }} }
+          </p>
+
+          <div class="mt-4 grid grid-cols-3 gap-x-3 gap-y-5 sm:gap-5 xl:grid-cols-[1.6fr_1fr_1fr_1fr]">
+            <div class="col-span-3 xl:col-span-1">
+              <label for="room" class="field-label">{{ 'booking.room' | translate }}</label>
+              <select id="room" class="field" formControlName="room">
+                @for (r of rooms; track r.id) {
+                  <option [value]="r.id">{{ 'rooms.types.' + r.id + '.name' | translate }}</option>
+                }
+              </select>
+            </div>
+            <div>
+              <label for="roomCount" class="field-label">{{ 'bookPage.roomCount' | translate }}</label>
+              <input id="roomCount" type="number" inputmode="numeric" class="field" formControlName="roomCount" min="1" [max]="limits.rooms"
+                     [attr.aria-invalid]="invalid('roomCount')" />
+              @if (invalid('roomCount')) { <p class="field-error">{{ 'form.errors.range' | translate: { min: 1, max: limits.rooms } }}</p> }
+            </div>
+            <div>
+              <label for="adults" class="field-label">{{ 'bookPage.adults' | translate }}</label>
+              <input id="adults" type="number" inputmode="numeric" class="field" formControlName="adults" min="1" [max]="limits.adults"
+                     [attr.aria-invalid]="invalid('adults')" />
+              @if (invalid('adults')) { <p class="field-error">{{ 'form.errors.range' | translate: { min: 1, max: limits.adults } }}</p> }
+            </div>
+            <div>
+              <label for="children" class="field-label">{{ 'bookPage.children' | translate }}</label>
+              <input id="children" type="number" inputmode="numeric" class="field" formControlName="children" min="0" [max]="limits.children"
+                     [attr.aria-invalid]="invalid('children')" />
+              @if (invalid('children')) { <p class="field-error">{{ 'form.errors.range' | translate: { min: 0, max: limits.children } }}</p> }
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Guest -->
+        <fieldset class="mt-10 border-t border-forest-900/10 pt-10">
+          <legend class="font-display float-left mb-6 w-full text-2xl font-semibold text-forest-900">{{ 'bookPage.guest' | translate }}</legend>
+          <div class="clear-both grid gap-5 sm:grid-cols-2">
+            <div class="sm:col-span-2">
+              <label for="name" class="field-label">{{ 'form.name' | translate }} *</label>
+              <input id="name" class="field" formControlName="name" autocomplete="name" [attr.aria-invalid]="invalid('name')" aria-describedby="name-error" />
+              @if (invalid('name')) { <p id="name-error" class="field-error">{{ 'form.errors.name' | translate }}</p> }
+            </div>
+            <div>
+              <label for="phone" class="field-label">{{ 'form.phone' | translate }} *</label>
+              <input id="phone" type="tel" class="field" formControlName="phone" autocomplete="tel" placeholder="+91 98765 43210"
+                     [attr.aria-invalid]="invalid('phone')" aria-describedby="phone-error" />
+              @if (invalid('phone')) { <p id="phone-error" class="field-error">{{ 'form.errors.phone' | translate }}</p> }
+            </div>
+            <div>
+              <label for="email" class="field-label">{{ 'form.email' | translate }} <span class="font-normal text-muted">({{ 'form.optional' | translate }})</span></label>
+              <input id="email" type="email" class="field" formControlName="email" autocomplete="email"
+                     [attr.aria-invalid]="invalid('email')" aria-describedby="email-error" />
+              @if (invalid('email')) { <p id="email-error" class="field-error">{{ 'form.errors.email' | translate }}</p> }
+            </div>
+            <div class="sm:col-span-2">
+              <label for="message" class="field-label">{{ 'bookPage.requests' | translate }} <span class="font-normal text-muted">({{ 'form.optional' | translate }})</span></label>
+              <textarea id="message" rows="4" class="field resize-y" formControlName="message" [placeholder]="'bookPage.requestsHint' | translate"></textarea>
+            </div>
+            <!-- Honeypot for bots -->
+            <input type="text" formControlName="botcheck" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          </div>
+        </fieldset>
+
+        <div class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p class="max-w-md text-sm text-muted">{{ 'bookPage.howItWorks' | translate }}</p>
+          <button type="submit" class="btn btn-gold w-full shrink-0 px-8 sm:w-auto">
+            <app-icon name="whatsapp" class="size-5" /> {{ 'bookPage.submit' | translate }}
+          </button>
+        </div>
+      </form>
+    } @else {
+      <div id="enquiry-status" class="rounded-[2rem] bg-white p-8 text-center shadow-soft sm:p-14" role="status" aria-live="polite">
+        @if (status() === 'sending') {
+          <p class="text-muted">{{ 'form.sending' | translate }}</p>
+        } @else {
+          <span class="mx-auto grid size-16 place-items-center rounded-full bg-forest-50 text-forest-700"><app-icon name="check" class="size-8" /></span>
+          <h2 class="section-title mt-6">{{ 'bookPage.done.title' | translate }}</h2>
+          <p class="mx-auto mt-4 max-w-lg text-muted">{{ 'bookPage.done.whatsapp' | translate }}</p>
+          @if (emailResult() === 'sent') { <p class="mx-auto mt-2 max-w-lg text-sm text-forest-700">{{ 'form.emailSent' | translate }}</p> }
+          @if (emailResult() === 'failed') { <p class="mx-auto mt-2 max-w-lg text-sm font-semibold text-[#b42318]">{{ 'form.emailFailed' | translate }}</p> }
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <a [href]="hotel.phoneHref" class="btn btn-forest"><app-icon name="phone" class="size-4" /> {{ hotel.phone }}</a>
+            <button type="button" (click)="reset()" class="btn btn-ghost">{{ 'bookPage.done.again' | translate }}</button>
+          </div>
+        }
+      </div>
+    }
+
+    <!-- Summary -->
+    <aside class="grid gap-5 lg:sticky lg:top-28">
+      <div class="overflow-hidden rounded-[2rem] bg-forest-900 text-ivory shadow-lift">
+        <div class="relative aspect-[16/10]">
+          <img [ngSrc]="img.rooms[roomId()]" fill sizes="(min-width:1024px) 22rem, 100vw" class="object-cover opacity-90" [alt]="'rooms.types.' + roomId() + '.name' | translate" />
+        </div>
+        <div class="p-6">
+          <p class="eyebrow !text-gold-300">{{ 'bookPage.summary' | translate }}</p>
+          <h2 class="font-display mt-2 text-2xl font-semibold">{{ 'rooms.types.' + roomId() + '.name' | translate }}</h2>
+          <dl class="mt-5 grid grid-cols-2 gap-4 text-sm">
+            <div><dt class="text-ivory/60">{{ 'booking.checkIn' | translate }}</dt><dd class="font-semibold">{{ form.controls.checkIn.value || '—' }}</dd></div>
+            <div><dt class="text-ivory/60">{{ 'booking.checkOut' | translate }}</dt><dd class="font-semibold">{{ form.controls.checkOut.value || '—' }}</dd></div>
+            <div><dt class="text-ivory/60">{{ 'bookPage.nightsLabel' | translate }}</dt><dd class="font-semibold">{{ nights() || '—' }}</dd></div>
+            <div><dt class="text-ivory/60">{{ 'bookPage.rate' | translate }}</dt><dd class="font-semibold">{{ 'rooms.askRate' | translate }}</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="rounded-[2rem] border border-forest-900/10 p-6">
+        <p class="font-display text-xl font-semibold text-forest-900">{{ 'bookPage.preferCall' | translate }}</p>
+        <a [href]="hotel.phoneHref" class="mt-3 flex items-center gap-3 py-1.5 font-semibold text-forest-800 hover:text-gold-600"><app-icon name="phone" class="size-5 text-gold-600" /> {{ hotel.phone }}</a>
+        <a [href]="'mailto:' + hotel.email" class="flex items-center gap-3 py-1.5 text-sm break-all text-forest-800 hover:text-gold-600"><app-icon name="mail" class="size-5 text-gold-600" /> {{ hotel.email }}</a>
+        <a routerLink="/rooms" class="mt-2 inline-flex items-center gap-2 py-2 text-sm font-semibold text-forest-800 hover:text-gold-600">{{ 'bookPage.compareRooms' | translate }} <app-icon name="arrow" class="size-4" /></a>
+      </div>
+    </aside>
+  </div>
+</section>

@@ -1,0 +1,649 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "rooms": "Rooms",
+    "dining": "Dining",
+    "facilities": "Facilities",
+    "gallery": "Gallery",
+    "location": "Location",
+    "contact": "Contact",
+    "book": "Book Now",
+    "main": "Main menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Switch language",
+    "travel": "Travel"
+  },
+  "common": {
+    "directions": "Get directions",
+    "min": "min",
+    "minutesAway": "{{min}} minutes away"
+  },
+  "quick": {
+    "label": "Quick contact",
+    "call": "Call",
+    "whatsapp": "Chat with us on WhatsApp"
+  },
+  "booking": {
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "room": "Room",
+    "nights": "{{count}} night(s)",
+    "check": "Check availability"
+  },
+  "seo": {
+    "home": {
+      "title": "Hotel Arasan Sapthagiri, Madurai — Rooms near Meenakshi Temple & Aravind Eye Hospital",
+      "description": "31 air-conditioned rooms in Anna Nagar, Madurai — 5 minutes from Aravind Eye Hospital, with a rooftop restaurant, free Wi-Fi and 24-hour room service. Book direct by phone or WhatsApp."
+    },
+    "about": {
+      "title": "About us",
+      "description": "Hotel Arasan Sapthagiri is a family-friendly hotel in Anna Nagar, Madurai, near Aravind Eye Hospital and the Meenakshi Amman Temple."
+    },
+    "rooms": {
+      "title": "Rooms & suites",
+      "description": "Standard A/C rooms, Super Deluxe rooms, Mini Suites and King/Queen Suites in Anna Nagar, Madurai. Call or WhatsApp for today’s rate."
+    },
+    "dining": {
+      "title": "Dining",
+      "description": "Rooftop restaurant and A/C multi-cuisine restaurant serving Indian, Chinese and continental food, plus 24-hour room service."
+    },
+    "facilities": {
+      "title": "Facilities & services",
+      "description": "Free Wi-Fi, conference hall, doctor on call, same-day laundry, safe lockers, foreign exchange and a travel desk."
+    },
+    "location": {
+      "title": "Location & travel",
+      "description": "MIG 343, 80 Feet Road, Anna Nagar, Madurai — 5 minutes from Aravind Eye Hospital, 10 minutes from Mattuthavani Bus Stand."
+    },
+    "gallery": {
+      "title": "Photo gallery",
+      "description": "See the rooms, rooftop restaurant, conference hall and travel desk of Hotel Arasan Sapthagiri, Anna Nagar, Madurai."
+    },
+    "book": {
+      "title": "Book a room",
+      "description": "Request a room at Hotel Arasan Sapthagiri, Madurai. Choose your dates and room, and we’ll confirm availability and rate on WhatsApp."
+    },
+    "contact": {
+      "title": "Contact us",
+      "description": "Call +91 452 439 0902, WhatsApp or email Hotel Arasan Sapthagiri, MIG 343, 80 Feet Road, Anna Nagar, Madurai 625020."
+    },
+    "travel": {
+      "title": "Travel packages",
+      "description": "Madurai sightseeing packages from Hotel Arasan Sapthagiri: temple darshan, city heritage, Rameswaram and Kodaikanal day trips — four sites each."
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Anna Nagar · Madurai",
+      "title": "Stay close to the temple. Feel at home.",
+      "lead": "Comfortable air-conditioned rooms, a rooftop restaurant and warm Madurai hospitality — minutes from Aravind Eye Hospital and the Meenakshi Amman Temple.",
+      "ctaRooms": "Explore rooms"
+    },
+    "highlights": {
+      "rooms": "Air-conditioned rooms",
+      "rooftop": "Rooftop restaurant",
+      "wifi": "Free Wi-Fi",
+      "service": "Room service"
+    },
+    "welcome": {
+      "eyebrow": "Welcome",
+      "title": "A peaceful base for pilgrims, families and travellers",
+      "p1": "Hotel Arasan Sapthagiri sits in Anna Nagar, overlooking the city of the Meenakshi Amman Temple. It is a place to rest, to worship and to feel looked after — from the moment you arrive until you check out.",
+      "p2": "Families visiting Aravind Eye Hospital, pilgrims and business travellers choose us for clean, quiet rooms, honest service and a location that keeps the whole city within easy reach.",
+      "badge": "to Aravind Eye Hospital",
+      "imageAlt": "Reception and lobby of Hotel Arasan Sapthagiri",
+      "more": "More about us"
+    },
+    "rooms": {
+      "eyebrow": "Stay",
+      "title": "Rooms & suites",
+      "lead": "Centrally air-conditioned and soundproofed, with attached bathrooms, round-the-clock hot water, satellite TV and a refrigerator in every room."
+    },
+    "dining": {
+      "eyebrow": "Dine",
+      "title": "Rooftop views, flavours from everywhere",
+      "lead": "From a morning filter coffee to a relaxed dinner under the stars — eat well without leaving the hotel.",
+      "rooftop": {
+        "title": "Rooftop restaurant",
+        "text": "Open-air and enclosed seating with views across Madurai."
+      },
+      "multicuisine": {
+        "title": "A/C multi-cuisine restaurant",
+        "text": "South Indian favourites alongside North Indian, Chinese and continental dishes."
+      },
+      "vegNonVeg": {
+        "title": "Veg & non-veg kitchens",
+        "text": "Separate vegetarian and non-vegetarian menus for every guest."
+      },
+      "cta": "See dining",
+      "imageAlt1": "Buffet at the hotel's multi-cuisine restaurant",
+      "imageAlt2": "Dining area at Hotel Arasan Sapthagiri"
+    },
+    "facilities": {
+      "eyebrow": "Comforts",
+      "title": "Everything you need, nothing you don't",
+      "cta": "All facilities"
+    },
+    "gallery": {
+      "eyebrow": "Take a look",
+      "title": "Inside Arasan Sapthagiri",
+      "cta": "View gallery"
+    },
+    "location": {
+      "eyebrow": "Find us",
+      "title": "In the heart of Anna Nagar",
+      "lead": "On 80 Feet Road, near Vasan Eye Care — easy to reach from the railway station, Mattuthavani bus stand and Aravind Eye Hospital.",
+      "mapTitle": "Map showing Hotel Arasan Sapthagiri"
+    },
+    "cta": {
+      "eyebrow": "Plan your stay",
+      "title": "Your room in Madurai is waiting",
+      "lead": "Send us your dates — we'll confirm availability and the best rate quickly on WhatsApp or by phone."
+    }
+  },
+  "rooms": {
+    "perNight": "/ night",
+    "askRate": "Ask for today's rate",
+    "types": {
+      "standard": {
+        "name": "Standard A/C",
+        "short": "A comfortable, well-priced room for short stays and solo travellers."
+      },
+      "super-deluxe": {
+        "name": "Super Deluxe",
+        "short": "More space and upgraded furnishings for a relaxed stay."
+      },
+      "suite": {
+        "name": "King / Queen Suite",
+        "short": "Our most spacious rooms, ideal for families and longer visits."
+      },
+      "mini-suite": {
+        "name": "Mini Suite",
+        "short": "A separate sitting area with the comforts of a suite."
+      }
+    },
+    "amenities": {
+      "ac": "Air-conditioning",
+      "soundproof": "Sound-proofed rooms",
+      "bath": "Hot & cold water",
+      "tv": "Television",
+      "fridge": "Refrigerator",
+      "wifi": "Free Wi-Fi",
+      "phone": "Direct-dial phone",
+      "roomService": "24-hour room service"
+    }
+  },
+  "facilities": {
+    "items": {
+      "ac": {
+        "name": "Centrally air-conditioned rooms",
+        "text": "Every room is centrally air-conditioned for restful sleep, whatever the Madurai weather."
+      },
+      "rooftop": {
+        "name": "Rooftop restaurant",
+        "text": "Open-air and enclosed seating with views across the temple city."
+      },
+      "multicuisine": {
+        "name": "A/C multi-cuisine restaurant",
+        "text": "Indian, Chinese and continental dishes, vegetarian and non-vegetarian."
+      },
+      "wifi": {
+        "name": "Free Wi-Fi",
+        "text": "Complimentary Wi-Fi so you can stay in touch with family and work."
+      },
+      "roomService": {
+        "name": "24-hour room service",
+        "text": "Food and help delivered to your room, day or night."
+      },
+      "conference": {
+        "name": "Conference hall",
+        "text": "A hall for meetings, training sessions and family functions."
+      },
+      "doctor": {
+        "name": "Doctor on call",
+        "text": "A doctor can be called to the hotel whenever you need one."
+      },
+      "laundry": {
+        "name": "Same-day laundry",
+        "text": "Hand in your clothes in the morning and get them back the same day."
+      },
+      "lockers": {
+        "name": "Safe deposit lockers",
+        "text": "Keep valuables and documents safe at the front desk."
+      },
+      "forex": {
+        "name": "Foreign exchange",
+        "text": "Currency exchange for overseas guests at the reception."
+      },
+      "travelDesk": {
+        "name": "Travel desk",
+        "text": "Cars, vans and coaches arranged for temple visits and sightseeing."
+      },
+      "cards": {
+        "name": "All major cards accepted",
+        "text": "Pay easily with all major credit and debit cards."
+      },
+      "directDial": {
+        "name": "Direct-dial telephone",
+        "text": "A telephone in every room with direct dialling."
+      },
+      "tv": {
+        "name": "Television in every room",
+        "text": "Relax after a long day of travel or temple visits."
+      }
+    }
+  },
+  "nearby": {
+    "aravind": "Aravind Eye Hospital",
+    "busStand": "Mattuthavani Bus Stand",
+    "railway": "Madurai Railway Station",
+    "temple": "Meenakshi Amman Temple",
+    "templeView": "Overlooking the temple city"
+  },
+  "footer": {
+    "about": "A comfortable, family-friendly hotel in Anna Nagar, Madurai — close to Aravind Eye Hospital and the Meenakshi Amman Temple.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "landmark": "Landmark: near Vasan Eye Care",
+    "rights": "All rights reserved.",
+    "tagline": "Madurai · Tamil Nadu"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "The page you're looking for has moved or doesn't exist.",
+    "home": "Back to home"
+  },
+  "gallery": {
+    "reception": "Reception and lobby",
+    "twinRoom": "Twin-bed room",
+    "doubleRoom": "Double room with sitting area",
+    "buffet": "Buffet at the multi-cuisine restaurant",
+    "conference": "Conference hall",
+    "rooftopNight": "Rooftop restaurant in the evening",
+    "rooftop": "Rooftop restaurant",
+    "deluxeRoom": "Deluxe room",
+    "standardRoom": "Standard A/C room",
+    "travelVan": "Travel desk tempo traveller",
+    "travelBus": "Travel desk tourist buses",
+    "travelCoach": "Coach interior",
+    "templeMandapam": "Mandapam of the Meenakshi Amman Temple",
+    "templeNight": "Temple gopuram lit up at night"
+  },
+  "about": {
+    "eyebrow": "About us",
+    "title": "Hospitality in the heart of the temple city",
+    "lead": "A family-friendly hotel in Anna Nagar, Madurai, close to Aravind Eye Hospital and the Meenakshi Amman Temple.",
+    "story": {
+      "eyebrow": "Our story",
+      "title": "Rest, worship and feel at home",
+      "p2": "With 31 air-conditioned rooms, a rooftop restaurant and a team that is available around the clock, we take care of the little things so that your visit to Madurai is calm and easy.",
+      "p3": "Whether you are here for treatment at Aravind Eye Hospital, for darshan at the Meenakshi Amman Temple or for business, you will find a warm welcome and a quiet room waiting for you."
+    },
+    "templeAlt": "Mandapam of the Meenakshi Amman Temple",
+    "templeNightAlt": "Meenakshi Amman Temple gopuram lit up at night",
+    "why": {
+      "eyebrow": "Why guests choose us",
+      "title": "Three reasons to stay with us",
+      "location": {
+        "title": "The right location",
+        "text": "Five minutes from Aravind Eye Hospital, with the bus stand and railway station within easy reach."
+      },
+      "family": {
+        "title": "Made for families",
+        "text": "Spacious suites, vegetarian and non-vegetarian food, and staff who understand travelling families."
+      },
+      "service": {
+        "title": "Service around the clock",
+        "text": "24-hour room service, a doctor on call and a travel desk to plan your temple visits."
+      }
+    },
+    "seeLocation": "See location & travel"
+  },
+  "roomsPage": {
+    "title": "Rooms & suites",
+    "roomLabel": "Room type",
+    "shared": "Air-conditioned, sound-proofed and kept spotless, with television, hot and cold water and 24-hour room service.",
+    "enquire": "Enquire now",
+    "waMessage": "Hello, I would like to know the rate and availability of the {{room}} room.",
+    "inEvery": {
+      "eyebrow": "In every room",
+      "title": "Comforts included with every stay"
+    },
+    "note": "Rates change with the season. Call or WhatsApp us for today’s best rate."
+  },
+  "dining": {
+    "title": "Dining at Arasan Sapthagiri",
+    "rooftop": {
+      "eyebrow": "Rooftop restaurant",
+      "title": "Dinner under the Madurai sky",
+      "text": "Our rooftop restaurant offers open-air and enclosed seating with sweeping views of the temple city — beautiful at sunset and after dark.",
+      "points": {
+        "open": "Open-air seating with city views",
+        "enclosed": "Enclosed, air-conditioned section",
+        "tea": "Rooftop tea bar"
+      }
+    },
+    "multicuisine": {
+      "eyebrow": "Multi-cuisine restaurant",
+      "title": "Flavours for every guest",
+      "text": "Our air-conditioned multi-cuisine restaurant serves Indian, Chinese and continental dishes, freshly prepared for every taste.",
+      "points": {
+        "cuisines": "Indian, Chinese and continental",
+        "vegNonVeg": "Vegetarian and non-vegetarian",
+        "ac": "Air-conditioned dining hall"
+      }
+    },
+    "extras": {
+      "roomService": {
+        "title": "24-hour room service",
+        "text": "Order from the menu and enjoy your meal in your room."
+      },
+      "views": {
+        "title": "Views of the city",
+        "text": "Watch the temple city glow from the rooftop at night."
+      },
+      "events": {
+        "title": "Group & family meals",
+        "text": "Ask us about food for meetings and family functions."
+      }
+    }
+  },
+  "facilitiesPage": {
+    "title": "Facilities & services",
+    "lead": "Everything you need for a comfortable stay — from free Wi-Fi to a doctor on call.",
+    "conference": {
+      "eyebrow": "Meetings & functions",
+      "title": "Conference hall",
+      "text": "Host meetings, training sessions and family get-togethers in our conference hall, with food served by our own kitchen.",
+      "cta": "Enquire about the hall"
+    },
+    "travel": {
+      "eyebrow": "Travel desk",
+      "title": "We arrange your travel",
+      "text": "From a single car to a full coach, our travel desk arranges comfortable transport for temple visits and sightseeing around Madurai.",
+      "vehicles": {
+        "0": "Tempo traveller",
+        "1": "Mini bus",
+        "2": "Coach interior"
+      }
+    }
+  },
+  "locationPage": {
+    "title": "Location & travel",
+    "address": "Our address",
+    "nearby": {
+      "eyebrow": "Getting here",
+      "title": "Close to everything that matters"
+    },
+    "how": {
+      "aravind": "A short drive or auto ride",
+      "busStand": "By auto or taxi",
+      "railway": "By auto or taxi",
+      "temple": "In view of the temple city"
+    },
+    "timesNote": "Travel times are approximate and depend on traffic.",
+    "city": {
+      "eyebrow": "Madurai",
+      "title": "The city of the Meenakshi Amman Temple",
+      "text": "One of India’s oldest living cities, Madurai is famous for the Meenakshi Amman Temple and its towering gopurams. Our travel desk can plan your darshan and sightseeing."
+    }
+  },
+  "galleryPage": {
+    "title": "Photo gallery",
+    "lead": "Rooms, dining, the conference hall and the temple city around us.",
+    "filter": "Filter photos",
+    "categories": {
+      "all": "All",
+      "rooms": "Rooms",
+      "dining": "Dining",
+      "hotel": "Hotel & services",
+      "madurai": "Madurai"
+    },
+    "openPhoto": "Open photo",
+    "viewer": "Photo viewer",
+    "close": "Close",
+    "prev": "Previous photo",
+    "next": "Next photo",
+    "note": "Tap any photo to view it larger. Use the arrow keys or swipe to move between photos."
+  },
+  "form": {
+    "name": "Full name",
+    "phone": "Mobile number",
+    "email": "Email",
+    "message": "Message",
+    "optional": "optional",
+    "sending": "Sending your enquiry…",
+    "emailSent": "A copy has also been emailed to the hotel.",
+    "emailFailed": "We could not email the hotel just now — please send the WhatsApp message or call us.",
+    "errors": {
+      "dates": "Please choose your check-in and check-out dates.",
+      "checkInPast": "Check-in can’t be in the past.",
+      "checkOutBeforeCheckIn": "Check-out must be at least one night after check-in.",
+      "range": "Enter a number from {{min}} to {{max}}.",
+      "name": "Please enter your name.",
+      "phone": "Enter a valid mobile number (10–13 digits).",
+      "email": "Enter a valid email address.",
+      "message": "Please write a short message."
+    }
+  },
+  "bookPage": {
+    "eyebrow": "Book direct",
+    "title": "Request a booking",
+    "lead": "Tell us your dates and we’ll confirm availability and today’s rate on WhatsApp or by phone.",
+    "stay": "Your stay",
+    "roomCount": "Rooms",
+    "adults": "Adults",
+    "children": "Children",
+    "guest": "Your details",
+    "requests": "Special requests",
+    "requestsHint": "Early arrival, extra bed, hospital visit timings…",
+    "howItWorks": "Pressing the button opens WhatsApp with your request ready to send. Nothing is charged online.",
+    "submit": "Send on WhatsApp",
+    "summary": "Your request",
+    "nightsLabel": "Nights",
+    "rate": "Rate",
+    "preferCall": "Prefer to call?",
+    "compareRooms": "Compare room types",
+    "done": {
+      "title": "Almost done!",
+      "whatsapp": "WhatsApp has opened with your message — just press send. We’ll reply as soon as possible.",
+      "again": "Make another request"
+    },
+    "message": {
+      "heading": "Booking request — {{hotel}}",
+      "subject": "Booking request from {{name}} for {{checkIn}}"
+    },
+    "packageNote": "I’d also like the “{{name}}” travel package during my stay."
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "We’re here to help",
+    "lead": "Questions about rooms, the conference hall or travel? Reach us whichever way suits you.",
+    "channels": {
+      "call": "Call us",
+      "whatsapp": "WhatsApp",
+      "whatsappValue": "Chat with us",
+      "email": "Email",
+      "visit": "Visit"
+    },
+    "formTitle": "Send us a message",
+    "formLead": "We’ll get back to you on WhatsApp or by phone.",
+    "topic": "Topic",
+    "topics": {
+      "general": "General question",
+      "rooms": "Rooms & rates",
+      "conference": "Conference hall",
+      "travel": "Travel desk"
+    },
+    "submit": "Send message",
+    "done": "Thank you!",
+    "again": "Send another message",
+    "fax": "Fax",
+    "message": {
+      "heading": "Website enquiry — {{hotel}}",
+      "subject": "{{topic}}: enquiry from {{name}}"
+    }
+  },
+  "nextPage": {
+    "label": "Up next",
+    "rooms": {
+      "title": "Rooms & suites",
+      "text": "Four room types, all air-conditioned and sound-proofed."
+    },
+    "dining": {
+      "title": "Dining",
+      "text": "Rooftop dinners and a multi-cuisine restaurant under one roof."
+    },
+    "facilities": {
+      "title": "Facilities",
+      "text": "Conference hall, travel desk, doctor on call and more."
+    },
+    "gallery": {
+      "title": "Gallery",
+      "text": "Take a look inside before you arrive."
+    },
+    "location": {
+      "title": "Location & travel",
+      "text": "Five minutes from Aravind Eye Hospital, in the heart of Madurai."
+    },
+    "contact": {
+      "title": "Contact us",
+      "text": "Call, WhatsApp or email — we’re happy to help."
+    },
+    "book": {
+      "title": "Book your stay",
+      "text": "Send your dates and we’ll confirm today’s rate on WhatsApp."
+    },
+    "travel": {
+      "title": "Travel packages",
+      "text": "Temples, heritage, Rameswaram and Kodaikanal — four sites in every trip."
+    }
+  },
+  "travel": {
+    "eyebrow": "Travel desk",
+    "title": "Travel packages",
+    "lead": "Four ready-made trips from our doorstep — four sites in each, with a comfortable vehicle arranged by our travel desk.",
+    "packagesEyebrow": "Choose your trip",
+    "packagesTitle": "Four packages, four sites each",
+    "packagesLead": "Pick a package, tell us your date and group size, and we’ll arrange the rest.",
+    "kind": {
+      "city": "In Madurai",
+      "dayTrip": "Day trip"
+    },
+    "distance": "approx. {{km}} km",
+    "packageNo": "Package {{n}}",
+    "packages": {
+      "temples": {
+        "name": "Madurai Temple Darshan",
+        "tagline": "The great temples of Madurai and two of Lord Murugan’s six abodes."
+      },
+      "heritage": {
+        "name": "Madurai Heritage Trail",
+        "tagline": "Palaces, museums and festival tanks of the ancient Pandya capital."
+      },
+      "rameswaram": {
+        "name": "Rameswaram Pilgrimage",
+        "tagline": "A sacred island journey across the sea to the land’s end at Dhanushkodi."
+      },
+      "kodaikanal": {
+        "name": "Kodaikanal Hill Escape",
+        "tagline": "Cool air, lakes and valley views in the “Princess of Hill Stations”."
+      }
+    },
+    "sites": {
+      "meenakshi": {
+        "name": "Meenakshi Amman Temple",
+        "text": "The heart of Madurai, famed for its towering, colourful gopurams."
+      },
+      "thiruparankundram": {
+        "name": "Thiruparankundram",
+        "text": "Rock-cut hill temple of Lord Murugan — the first of his six abodes."
+      },
+      "alagarKovil": {
+        "name": "Alagar Kovil",
+        "text": "Vishnu temple at the foot of the Alagar hills, north of the city."
+      },
+      "pazhamudircholai": {
+        "name": "Pazhamudircholai",
+        "text": "Murugan shrine in the forested hills above Alagar Kovil."
+      },
+      "nayakkarMahal": {
+        "name": "Thirumalai Nayakkar Mahal",
+        "text": "17th-century palace known for its giant pillars and grand courtyard."
+      },
+      "gandhiMuseum": {
+        "name": "Gandhi Memorial Museum",
+        "text": "A museum on Gandhi’s life, set in a historic palace."
+      },
+      "teppakulam": {
+        "name": "Vandiyur Mariamman Teppakulam",
+        "text": "A huge temple tank, home of Madurai’s famous Float Festival."
+      },
+      "koodalAzhagar": {
+        "name": "Koodal Azhagar Temple",
+        "text": "Ancient Vishnu temple with a beautiful multi-tiered tower."
+      },
+      "ramanathaswamy": {
+        "name": "Ramanathaswamy Temple",
+        "text": "One of the twelve Jyotirlingas, with India’s longest temple corridors."
+      },
+      "pambanBridge": {
+        "name": "Pamban Bridge",
+        "text": "The sea bridge linking Rameswaram island to the mainland."
+      },
+      "dhanushkodi": {
+        "name": "Dhanushkodi",
+        "text": "The ghost town at the island’s tip, where two seas meet."
+      },
+      "kalamMemorial": {
+        "name": "Dr. A.P.J. Abdul Kalam Memorial",
+        "text": "Memorial to the former President, a son of Rameswaram."
+      },
+      "kodaiLake": {
+        "name": "Kodai Lake",
+        "text": "Star-shaped lake for boating, cycling and walks along the shore."
+      },
+      "coakersWalk": {
+        "name": "Coaker’s Walk",
+        "text": "Cliff-side walkway with sweeping views over the valley."
+      },
+      "bryantPark": {
+        "name": "Bryant Park",
+        "text": "Botanical garden known for its flowers and glasshouse."
+      },
+      "pillarRocks": {
+        "name": "Pillar Rocks",
+        "text": "Three giant granite pillars rising from the misty valley."
+      }
+    },
+    "priceLabel": "Price",
+    "askPrice": "Ask for price",
+    "enquire": "Enquire on WhatsApp",
+    "addToStay": "Add to my stay",
+    "note": "Opening hours, darshan queues and road conditions can change. Our travel desk will confirm the route, timings and vehicle before your trip.",
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Three easy steps",
+      "choose": {
+        "title": "Choose a package",
+        "text": "Pick one of our four trips, or ask us to plan your own route."
+      },
+      "tell": {
+        "title": "Tell us your date",
+        "text": "Send your travel date and group size on WhatsApp or at the front desk."
+      },
+      "ride": {
+        "title": "We arrange the ride",
+        "text": "A car, tempo traveller or bus is ready at the hotel on the day."
+      }
+    },
+    "fleet": {
+      "title": "Vehicles for every group"
+    },
+    "custom": "Plan a custom trip",
+    "waPackage": "Hello, I’m interested in the “{{name}}” travel package. Please share the price and details.",
+    "waCustom": "Hello, I’d like help planning a sightseeing trip around Madurai."
+  }
+}

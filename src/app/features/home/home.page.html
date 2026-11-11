@@ -1,0 +1,208 @@
+<!-- ============ HERO ============ -->
+<section class="relative isolate flex min-h-[100svh] items-end overflow-hidden bg-forest-900 pb-16 sm:items-center sm:pb-0">
+  <img [ngSrc]="img.hero" fill priority sizes="100vw" class="-z-20 object-cover" alt="" />
+  <!-- Deep green wash keeps text readable on the low-resolution source photo -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-t from-forest-900 via-forest-900/70 to-forest-900/40"></div>
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top_right,rgba(214,179,94,0.25),transparent_55%)]"></div>
+
+  <div class="container-x pt-28">
+    <div class="max-w-3xl animate-rise">
+      <p class="eyebrow !text-gold-300">{{ 'home.hero.eyebrow' | translate }}</p>
+      <h1 class="font-display mt-4 text-[2.6rem] leading-[1.06] font-semibold text-ivory min-[400px]:text-5xl sm:text-6xl lg:text-7xl">
+        {{ 'home.hero.title' | translate }}
+      </h1>
+      <p class="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 sm:text-lg">{{ 'home.hero.lead' | translate }}</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a routerLink="/rooms" class="btn btn-gold">{{ 'home.hero.ctaRooms' | translate }} <app-icon name="arrow" class="size-4" /></a>
+        <a [href]="hotel.phoneHref" class="btn btn-ghost text-ivory"><app-icon name="phone" class="size-4" /> {{ hotel.phone }}</a>
+      </div>
+    </div>
+    <app-booking-bar class="mt-12 max-w-5xl" />
+  </div>
+</section>
+
+<!-- ============ HIGHLIGHTS ============ -->
+<section class="border-b border-forest-900/10 bg-sand">
+  <ul class="container-x grid grid-cols-2 divide-forest-900/10 lg:grid-cols-4 lg:divide-x">
+    @for (h of highlights; track h.key) {
+      <li class="flex items-center gap-3 py-5 sm:gap-4 sm:py-7 lg:justify-center">
+        <app-icon [name]="h.icon" class="size-7 shrink-0 text-gold-600 sm:size-8" />
+        <p class="text-sm leading-snug text-forest-900">
+          @if (h.value) { <span class="font-display block text-2xl font-semibold">{{ h.value }}</span> }
+          {{ h.key | translate }}
+        </p>
+      </li>
+    }
+  </ul>
+</section>
+
+<!-- ============ WELCOME ============ -->
+<section class="py-16 sm:py-24">
+  <div class="container-x grid items-center gap-14 lg:grid-cols-2">
+    <div class="relative">
+      <div class="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-lift">
+        <img [ngSrc]="img.reception" fill class="object-cover" sizes="(min-width: 1024px) 40vw, 100vw" [alt]="'home.welcome.imageAlt' | translate" />
+      </div>
+      <div class="absolute -right-4 -bottom-6 hidden rounded-2xl bg-forest-800 p-6 text-ivory shadow-lift sm:block">
+        <p class="font-display text-4xl font-semibold text-gold-300">5 {{ 'common.min' | translate }}</p>
+        <p class="mt-1 text-sm">{{ 'home.welcome.badge' | translate }}</p>
+      </div>
+    </div>
+    <div>
+      <app-section-heading align="left" [eyebrow]="'home.welcome.eyebrow' | translate" [title]="'home.welcome.title' | translate" />
+      <p class="mt-6 text-lg leading-relaxed text-muted">{{ 'home.welcome.p1' | translate }}</p>
+      <p class="mt-4 leading-relaxed text-muted">{{ 'home.welcome.p2' | translate }}</p>
+      <ul class="mt-8 grid gap-4 sm:grid-cols-2">
+        @for (n of nearby; track n.key) {
+          <li class="flex items-center gap-3 rounded-2xl border border-forest-900/10 bg-white/60 p-4">
+            <app-icon [name]="n.icon" class="size-6 text-gold-600" />
+            <span class="text-sm">
+              <span class="block font-semibold text-forest-900">{{ 'nearby.' + n.key | translate }}</span>
+              <span class="text-muted">
+                @if (n.minutes) { {{ 'common.minutesAway' | translate: { min: n.minutes } }} } @else { {{ 'nearby.templeView' | translate }} }
+              </span>
+            </span>
+          </li>
+        }
+      </ul>
+      <a routerLink="/about" class="mt-8 inline-flex items-center gap-2 py-2 font-semibold text-forest-800 hover:text-gold-600">
+        {{ 'home.welcome.more' | translate }} <app-icon name="arrow" class="size-4" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ROOMS ============ -->
+<section class="bg-forest-50 py-16 sm:py-24">
+  <div class="container-x">
+    <app-section-heading [eyebrow]="'home.rooms.eyebrow' | translate" [title]="'home.rooms.title' | translate"
+                         [lead]="'home.rooms.lead' | translate" />
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (r of rooms; track r.id; let i = $index) {
+        <a [routerLink]="['/rooms']" [fragment]="r.id"
+           class="group overflow-hidden rounded-3xl bg-ivory shadow-soft transition duration-500 hover:-translate-y-1 hover:shadow-lift">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img [ngSrc]="img.rooms[r.id]" fill class="object-cover transition duration-700 group-hover:scale-105"
+                 [alt]="'rooms.types.' + r.id + '.name' | translate" sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-semibold text-forest-900">{{ 'rooms.types.' + r.id + '.name' | translate }}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{{ 'rooms.types.' + r.id + '.short' | translate }}</p>
+            <p class="mt-5 flex items-center justify-between text-sm font-semibold text-forest-800">
+              <span>{{ r.rate ? ('₹' + r.rate + ' ' + ('rooms.perNight' | translate)) : ('rooms.askRate' | translate) }}</span>
+              <app-icon name="arrow" class="size-4 transition group-hover:translate-x-1" />
+            </p>
+          </div>
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ DINING ============ -->
+<section class="relative overflow-hidden bg-forest-900 py-16 sm:py-24 text-ivory">
+  <div class="absolute -top-32 -right-32 size-96 rounded-full bg-gold-500/10 blur-3xl" aria-hidden="true"></div>
+  <div class="container-x grid items-center gap-14 lg:grid-cols-2">
+    <div>
+      <app-section-heading align="left" tone="light" [eyebrow]="'home.dining.eyebrow' | translate"
+                           [title]="'home.dining.title' | translate" [lead]="'home.dining.lead' | translate" />
+      <ul class="mt-8 grid gap-4">
+        @for (k of ['rooftop', 'multicuisine', 'vegNonVeg']; track k) {
+          <li class="flex gap-4">
+            <span class="mt-1 grid size-8 shrink-0 place-items-center rounded-full bg-gold-500/15 text-gold-300"><app-icon name="check" class="size-4" /></span>
+            <span><span class="block font-semibold text-ivory">{{ 'home.dining.' + k + '.title' | translate }}</span>
+              <span class="text-sm text-ivory/70">{{ 'home.dining.' + k + '.text' | translate }}</span></span>
+          </li>
+        }
+      </ul>
+      <a routerLink="/dining" class="btn btn-gold mt-10">{{ 'home.dining.cta' | translate }} <app-icon name="arrow" class="size-4" /></a>
+    </div>
+    <div class="grid grid-cols-2 gap-4">
+      <div class="relative aspect-[4/5] overflow-hidden rounded-3xl">
+        <img [ngSrc]="img.restaurant" fill class="object-cover" sizes="(min-width: 1024px) 25vw, 50vw" [alt]="'home.dining.imageAlt1' | translate" />
+      </div>
+      <div class="relative mt-12 aspect-[4/5] overflow-hidden rounded-3xl">
+        <img [ngSrc]="img.rooftopNight" fill class="object-cover" sizes="(min-width: 1024px) 25vw, 50vw" [alt]="'home.dining.imageAlt2' | translate" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACILITIES ============ -->
+<section class="py-16 sm:py-24">
+  <div class="container-x">
+    <app-section-heading [eyebrow]="'home.facilities.eyebrow' | translate" [title]="'home.facilities.title' | translate" />
+    <ul class="mt-14 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      @for (f of facilities; track f.key) {
+        <li class="group flex flex-col items-center gap-3 rounded-3xl border border-forest-900/10 bg-white/60 p-6 text-center transition hover:border-gold-400 hover:bg-white">
+          <span class="grid size-14 place-items-center rounded-2xl bg-forest-50 text-forest-700 transition group-hover:bg-gold-500 group-hover:text-forest-900">
+            <app-icon [name]="f.icon" class="size-7" />
+          </span>
+          <span class="text-sm font-semibold text-forest-900">{{ 'facilities.items.' + f.key + '.name' | translate }}</span>
+        </li>
+      }
+    </ul>
+    <div class="mt-10 text-center">
+      <a routerLink="/facilities" class="btn btn-forest">{{ 'home.facilities.cta' | translate }}</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY TEASER ============ -->
+<section class="bg-sand py-16 sm:py-24">
+  <div class="container-x">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <app-section-heading align="left" [eyebrow]="'home.gallery.eyebrow' | translate" [title]="'home.gallery.title' | translate" />
+      <a routerLink="/gallery" class="inline-flex items-center gap-2 py-2 font-semibold text-forest-800 hover:text-gold-600">
+        {{ 'home.gallery.cta' | translate }} <app-icon name="arrow" class="size-4" />
+      </a>
+    </div>
+    <div class="mt-12 grid auto-rows-[11rem] grid-cols-2 gap-4 sm:auto-rows-[14rem] lg:grid-cols-4">
+      @for (g of img.gallery.slice(0, 5); track g.src; let i = $index) {
+        <a routerLink="/gallery" class="group relative overflow-hidden rounded-3xl" [class.col-span-2]="i === 0" [class.lg:row-span-2]="i === 0">
+          <img [ngSrc]="g.src" fill class="object-cover transition duration-700 group-hover:scale-105" [alt]="g.alt | translate"
+               sizes="(min-width: 1024px) 50vw, 50vw" />
+        </a>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOCATION ============ -->
+<section class="py-16 sm:py-24">
+  <div class="container-x grid gap-12 lg:grid-cols-5">
+    <div class="lg:col-span-2">
+      <app-section-heading align="left" [eyebrow]="'home.location.eyebrow' | translate" [title]="'home.location.title' | translate"
+                           [lead]="'home.location.lead' | translate" />
+      <address class="mt-8 grid gap-3 not-italic text-forest-900">
+        <p class="flex gap-3"><app-icon name="pin" class="mt-1 size-5 text-gold-600" />
+          <span>{{ hotel.address.line1 }}, {{ hotel.address.line2 }}, {{ hotel.address.city }} – {{ hotel.address.pin }}
+            <span class="block text-sm text-muted">{{ 'footer.landmark' | translate }}</span></span></p>
+        <a [href]="hotel.phoneHref" class="flex gap-3 py-2 hover:text-gold-600"><app-icon name="phone" class="size-5 text-gold-600" /> {{ hotel.phone }}</a>
+      </address>
+      <a [href]="directions" target="_blank" rel="noopener" class="btn btn-forest mt-8"><app-icon name="directions" class="size-4" /> {{ 'common.directions' | translate }}</a>
+    </div>
+    <div class="overflow-hidden rounded-[2rem] shadow-soft lg:col-span-3">
+      <iframe [src]="mapUrl | safeUrl" class="h-80 w-full border-0 sm:h-[26rem]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              [title]="'home.location.mapTitle' | translate"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="pb-16 sm:pb-24">
+  <div class="container-x">
+    <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-forest-800 to-forest-900 px-8 py-16 text-center text-ivory sm:px-16">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(214,179,94,0.25),transparent_45%)]" aria-hidden="true"></div>
+      <div class="relative">
+        <p class="eyebrow !text-gold-300">{{ 'home.cta.eyebrow' | translate }}</p>
+        <h2 class="font-display mx-auto mt-4 max-w-2xl text-4xl font-semibold sm:text-5xl">{{ 'home.cta.title' | translate }}</h2>
+        <p class="mx-auto mt-4 max-w-xl text-ivory/75">{{ 'home.cta.lead' | translate }}</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a routerLink="/book" class="btn btn-gold">{{ 'nav.book' | translate }}</a>
+          <a [href]="hotel.phoneHref" class="btn btn-ghost text-ivory"><app-icon name="phone" class="size-4" /> {{ 'quick.call' | translate }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

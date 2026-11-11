@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Unit tests (headless Chrome)
+        run: npm run test:ci
+
+      - name: Build & prerender all pages
+        run: npm run build
+
+      - name: Check the prerendered output
+        run: |
+          out=dist/arasan-sapthagiri/browser
+          for page in index.html about/index.html rooms/index.html travel/index.html book/index.html 404.html sitemap.xml robots.txt; do
+            test -s "$out/$page" || { echo "missing $page"; exit 1; }
+          done
+          grep -q 'application/ld+json' "$out/index.html" || { echo "missing structured data"; exit 1; }
